@@ -1,0 +1,73 @@
+body {
+  background-color: #121212;
+  color: #30D5C8;
+  font-family: "Fira Code";
+  font-size: 16px; /* Set the default font size */
+  min-height: 100vh; /* Set minimum height to viewport height */
+  margin: 0; /* Remove default margin from body */
+  display: flex; /* Make body the flex container */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  /* Added styles for positioning */
+  position: fixed;
+  top: 0;
+  width: 100%; /* Set width to 100% for full width */
+}
+
+.topnav a {
+  float: left;
+  color: #30D5C8;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #30D5C8;
+  color: black;
+}
+
+.card {
+  margin: 50px;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #333;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card a {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 5px; /* Adjust margin as needed */
+  border-radius: 5px; /* Adjust border radius for desired curve */
+  background-color: #30D5C8; /* Change background color as desired */
+  color: #121212; /* Change text color as desired */
+  text-decoration: none; /* Remove underline from anchor text */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+main {
+  flex: 1; /* Allow main to fill remaining space */
+  margin: 50px 25px 50px 25px; /* Apply margin to main instead of card */
+}
+
+footer {
+  /* Added class to differentiate from top nav */
+  overflow: hidden;
+  background-color: #333;
+  /* Added styles for positioning */
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Set width to 100% for full width */
+  text-align: center;
+  padding: 10px;
+  color: #30D5C8;
+}
+
