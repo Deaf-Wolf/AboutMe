@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neonnnchte und Klingelschrecken: Eine Cyberpunk-Pizza-Saga</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #0f0;
+            background-color: #111;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #f0f;
+        }
+        pre {
+            background-color: #222;
+            border: 1px solid #0f0;
+            border-left: 3px solid #f0f;
+            color: #0f0;
+            page-break-inside: avoid;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+        .gif-placeholder {
+            background-color: #222;
+            border: 1px solid #0f0;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            color: #f0f;
+        }
+        #languageSwitch {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f0f;
+            color: #111;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="languageSwitch" onclick="toggleLanguage()">Switch to English</button>
+
+    <h1 class="de">Neonnnchte und Klingelschrecken: Eine Cyberpunk-Pizza-Saga</h1>
+    <h1 class="en">Neon Nights and Doorbell Frights: A Cyberpunk Pizza Saga</h1>
+    
+    <h2 class="de">Teil 1: Die Entstehung einer neonbeleuchteten Idee</h2>
+    <h2 class="en">Part 1: The Genesis of a Neon-Lit Idea</h2>
+
+    <p class="de">In dieser verchromten, neongetrnkten Metropole begab ich mich auf eine Mission, die Realitt selbst zu hacken. Warum? Um zu verhindern, dass meine Synthpizza-Lieferdrohne verrckt spielt, nur weil meine Audio-Implantate das archaische LED-Signal der Trklingel nicht erfassen knnen. In dieser Hightech-Unterwelt beschloss ich, das System zu umgehen und mein eigenes neural vernetztes Benachrichtigungsraster zu erschaffen.</p>
+    <p class="en">In this chrome-plated, neon-soaked metropolis, I embarked on a quest to hack reality itself. Why? To stop my synthpizza delivery drone from going haywire, all because my audio implants can't pick up the doorbell's archaic LED signal. In this high-tech, low-life world, I decided to bypass the system and create my own neural-linked notification grid.</p>
+
+    <p class="de">Anstatt mich in ein konzerngesteuertes Signalisierungs-Mainframe einzuklinken, entschied ich mich dafr, mein eigenes zu bauen. Denn in Night City gilt: Wenn du nicht codest, wirst du codiert. Auerdem ist es eine coole Mglichkeit, mein Bewusstsein mit dem pulsierenden Herzen von Mikrocontrollern und der digitalen Seele eines Raspberry Pi zu verbinden.</p>
+    <p class="en">Instead of jacking into some corp-controlled signaling mainframe, I chose to build my own, because in Night City, if you're not coding, you're being coded. Plus, it's a chrome way to uplink my consciousness with the pulsing heart of microcontrollers and the digital soul of a Raspberry Pi.</p>
+
+    <h2 class="de">Der Tech-Stack eines Cyberpunk-Traums</h2>
+    <h2 class="en">The Tech Stack of a Cyberpunk Dream</h2>
+
+    <p class="de">Fr diese digitale Rebellion habe ich rekrutiert:</p>
+    <p class="en">For this digital rebellion, I've recruited:</p>
+
+    <ul>
+        <li class="de">Einen wiederbelebten Raspberry Pi 1 B, jetzt bertaktet, um als mein persnlicher NET-Runner zu dienen, getarnt als MQTT-Broker und Server.</li>
+        <li class="en">A resurrected Raspberry Pi 1 B, now overclocked to serve as my personal NET runner, masquerading as an MQTT Broker and Server.</li>
+        <li class="de">Einen ESP32, das Cyberware der Wahl fr DIY-Hacker, neural verbunden mit einem Piezo-Pad. Dieser Bursche ist an 3,3V angeschlossen und ber einen 10kOhm-Widerstand mit Pin 34 verbunden - denn in dieser Stadt zhlt jede Verbindung.</li>
+        <li class="en">An ESP32, the cyberware of choice for DIY hackers, neurally linked to a Piezo pad. This bad boy's jacked into 3.3V and, through a 10kOhm resistor, into Pin 34 - because in this city, every connection counts.</li>
+    </ul>
+
+    <h2 class="de">Der Code: Wo Siliziumtrume geschmiedet werden</h2>
+    <h2 class="en">The Code: Where Silicon Dreams are Forged</h2>
+
+    <p class="de">Zuerst habe ich einen Testcode kompiliert, um den sensorischen Schwellenwert zu kalibrieren und sicherzustellen, dass mein MQTT-zu-Pi-Nervenbahnen mit Hchstleistung funktionieren. Betrachtet die digitale Beschworungsformel:</p>
+    <p class="en">First, I compiled some test code to calibrate the sensory threshold and ensure my MQTT-to-Pi neural pathway was functioning at peak efficiency. Behold, the digital incantation:</p>
+
+    <pre>
+#include &lt;WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+#include &lt;ArduinoJson.h&gt;
+#include "time.h"
+
+#define PIEZO_PIN 34
+#define THRESHOLD 1000
+#define DEBOUNCE_TIME 3000
+
+const char* ssid = "NightCityNet";
+const char* password = "Neur0m@ncer";
+const char* mqtt_server = "192.168.1.42";
+const int mqtt_port = 1883;
+const char* mqtt_topic = "esp32/data";
+
+// ... (rest of the code)
+
+void loop() {
+  // ... (MQTT connection and loop stuff)
+
+  int piezoValue = analogRead(PIEZO_PIN);
+  
+  DynamicJsonDocument doc(200);
+  doc["time"] = getFormattedTime();
+  doc["value"] = piezoValue;
+
+  if (piezoValue > THRESHOLD) {
+    // Bell detection logic
+    // ...
+  }
+
+  // Publish to MQTT
+  // ...
+
+  delay(500);  // Send data every half-second
+}
+    </pre>
+
+    <h2 class="de">Der Raspberry Pi: Das digitale Herz der Operation</h2>
+    <h2 class="en">The Raspberry Pi: The Digital Heart of the Operation</h2>
+
+    <p class="de">Auf der Pi-Seite habe ich einen Flask-Server mit Socket.IO entwickelt, um die Daten in Echtzeit auf mein neurales HUD zu streamen... okay, es ist nur eine Website in meinem lokalen Netzwerk. Aber es ermglicht mir, auszuchecken und die Klingel physisch zu berprfen, whrend ich immer noch mit dem Datenstrom verbunden bin.</p>
+    <p class="en">On the Pi side, I've engineered a Flask server with Socket.IO to stream the data in real-time to my neural HUD... okay, it's just a website on my local network. But it lets me jack out and physically check the bell while still being plugged into the datastream.</p>
+
+    <div class="gif-placeholder">
+        [Hier Cyberpunk-themed Big Brain GIF einfgen]
+    </div>
+
+    <p class="de">Hier ist ein Einblick in die digitale Seele des Pi:</p>
+    <p class="en">Here's a glimpse into the digital soul of the Pi:</p>
+
+    <pre>
+import paho.mqtt.client as mqtt
+import json
+from flask import Flask, render_template
+from flask_socketio import SocketIO
+
+app = Flask(__name__)
+socketio = SocketIO(app)
+
+# ... (MQTT setup)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@socketio.on('connect')
+def handle_connect():
+    print('Client eingestpselt')
+
+def on_message(client, userdata, message):
+    data = json.loads(message.payload.decode())
+    socketio.emit('new_data', data)
+
+# ... (MQTT client setup)
+
+if __name__ == '__main__':
+    socketio.run(app, host='0.0.0.0', port=5000)
+    </pre>
+
+    <h2 class="de">Die neurale Schnittstelle: Wo Daten auf Wetware treffen</h2>
+    <h2 class="en">The Neural Interface: Where Data Meets Wetware</h2>
+
+    <p class="de">Und hier ist die index.html, die neurale Schnittstelle, die Rohdaten in ein visuelles Cortex-freundliches Format bersetzt:</p>
+    <p class="en">And here's the index.html, the neural interface that translates raw data into a visual cortex-friendly format:</p>
+
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Trklingel Neurale Schnittstelle&lt;/title&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Trklingel Neurale Schnittstelle&lt;/h1&gt;
+    &lt;div&gt;
+        &lt;canvas id="doorbellChart" width="400" height="200"&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+    &lt;div id="latestData"&gt;
+        &lt;p&gt;Neueste Daten: &lt;span id="latestValue"&gt;&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Klingel erkannt: &lt;span id="bellDetected"&gt;&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        var socket = io();
+        var ctx = document.getElementById('doorbellChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Piezo-Wert',
+                    data: [],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        socket.on('new_data', function(data) {
+            if (chart.data.labels.length > 50) {
+                chart.data.labels.shift();
+                chart.data.datasets[0].data.shift();
+            }
+            chart.data.labels.push(data.time);
+            chart.data.datasets[0].data.push(data.value);
+            chart.update();
+
+            document.getElementById('latestValue').textContent = data.value;
+            document.getElementById('bellDetected').textContent = data.bellDetected ? 'Ja' : 'Nein';
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h2 class="de">Der Glitch in der Matrix: Wenn die Realitt nicht berechenbar ist</h2>
+    <h2 class="en">The Glitch in the Matrix: When Reality Doesn't Compute</h2>
+
+    <p class="de">Aber selbst in diesem neongetrnkten Technologie-Paradies entgeht uns die Perfektion. Die sensorischen Eingaben, die ich erhalte, sind verworrener als ein Black-ICE-Verteidigungssystem. Es scheint, als wre das Signal meiner Trklingel im Stadtlrm verloren gegangen, ununterscheidbar vom Hintergrundrauschen tausender tippender Netrunner.</p>
+    <p class="en">But even in this neon-drenched paradise of technology, perfection eludes us. The sensory input I'm receiving is more scrambled than a Black ICE defense system. It seems my doorbell's signal is lost in the noise of the city, indistinguishable from the background hum of a thousand netrunners typing away.</p>
+
+    <div class="gif-placeholder">
+        [Hier cyberpunk-themed Diagramm oder Graph der Datenergebnisse einfgen]
+    </div>
+
+<p class="de">Wie Sie sehen können, erweist sich die Unterscheidung zwischen einer Pizza-Lieferdrohne und dem elektromagnetischen Flüstern vorbeifahrender AVs als ziemliches digitales Rätsel. Aber in Night City ist jeder Rückschlag nur der Auftakt für ein Comeback. Dies ist lediglich das Ende von Patch 1.0 in unserem Tech-Noir-Epos. Wird unser einsamer Hacker (ich) diese Hindernisse überwinden? Wird die Synthpizza jemals mit optimaler Temperatur ankommen? Klinken Sie sich ein für Patch 2.0, wo wir tiefer in das NET eintauchen, unsere Signalverarbeitungsalgorithmen optimieren und möglicherweise die Vorzüge kybernetisch verbesserter Brieftauben als Ausfallsicher-Lieferbenachrichtigungssystem erforschen!</p>
+    
+    <p class="en">As you can see, differentiating between a pizza delivery drone and the electromagnetic whisper of passing AV's is proving to be quite the digital conundrum. But in Night City, every setback is just a setup for a comeback. This is merely the end of Patch 1.0 in our tech-noir epic. Will our lone hacker (yours truly) overcome these obstacles? Will the synthpizza ever arrive at optimal temperature? Jack in for Patch 2.0, where we'll dive deeper into the NET, tweak our signal processing algorithms, and possibly explore the merits of cybernetically enhanced carrier pigeons as a failsafe delivery notification system!</p>
+
+    <h2 class="de">Nächste Schritte: Das NET neu verdrahten</h2>
+    <h2 class="en">Next Steps: Rewiring the NET</h2>
+
+    <p class="de">Während wir uns auf Patch 2.0 vorbereiten, steht uns ein ganzes Arsenal an Möglichkeiten zur Verfügung. Hier sind einige der Upgrades, die ich für mein Klingel-Erkennungssystem in Betracht ziehe:</p>
+    <p class="en">As we gear up for Patch 2.0, a whole arsenal of possibilities lies before us. Here are some of the upgrades I'm considering for my doorbell detection system:</p>
+
+    <ul>
+        <li class="de">Neurale Filterverstärkung: Implementierung fortschrittlicher Signalverarbeitungsalgorithmen, um das Klingelsignal vom Stadtlärm zu trennen. Es ist Zeit, das Rauschen zu hacken!</li>
+        <li class="en">Neural Filter Enhancement: Implementing advanced signal processing algorithms to separate the doorbell signal from city noise. Time to hack the static!</li>
+        
+        <li class="de">Quantenverschränkte Sensoren: Warum sich mit klassischer Physik zufrieden geben, wenn wir die Realität auf Quantenebene manipulieren können? Vielleicht können wir die Klingel erkennen, bevor sie überhaupt gedrückt wird!</li>
+        <li class="en">Quantum Entangled Sensors: Why settle for classical physics when we can manipulate reality at the quantum level? Maybe we can detect the doorbell before it's even pressed!</li>
+        
+        <li class="de">KI-gestützte Musteranalyse: Lasst uns eine KI trainieren, die zwischen einer echten Klingel und dem Summen einer vorbeifliegenden Cybermücke unterscheiden kann.</li>
+        <li class="en">AI-Powered Pattern Analysis: Let's train an AI to distinguish between a real doorbell and the buzz of a passing cyber-mosquito.</li>
+        
+        <li class="de">Psionic-Amplifier: Wer braucht schon Elektrizität, wenn wir direkt in die Gedanken des Pizzaboten eintauchen können? (Rechtliche Hinweise ausstehend)</li>
+        <li class="en">Psionic Amplifier: Who needs electricity when we can tap directly into the pizza delivery person's thoughts? (Legal disclaimers pending)</li>
+    </ul>
+
+    <p class="de">Mit diesen Upgrades werden wir nicht nur eine Türklingel erkennen - wir werden die Grenzen zwischen Mensch und Maschine, zwischen Signal und Rauschen neu definieren. Bleiben Sie dran, Cyberpunks, denn die Zukunft klingelt an unserer Tür, und diesmal werden wir bereit sein, sie zu empfangen!</p>
+    <p class="en">With these upgrades, we won't just be detecting a doorbell - we'll be redefining the boundaries between human and machine, between signal and noise. Stay tuned, cyberpunks, because the future is ringing at our door, and this time, we'll be ready to answer it!</p>
+
+    <script>
+    function toggleLanguage() {
+        var deElements = document.getElementsByClassName('de');
+        var enElements = document.getElementsByClassName('en');
+        var button = document.getElementById('languageSwitch');
+
+        for (var i = 0; i < deElements.length; i++) {
+            if (deElements[i].style.display === 'none') {
+                deElements[i].style.display = 'block';
+                enElements[i].style.display = 'none';
+                button.innerHTML = 'Switch to English';
+            } else {
+                deElements[i].style.display = 'none';
+                enElements[i].style.display = 'block';
+                button.innerHTML = 'Zu Deutsch wechseln';
+            }
+        }
+    }
+
+    // Initially hide English text
+    var enElements = document.getElementsByClassName('en');
+    for (var i = 0; i < enElements.length; i++) {
+        enElements[i].style.display = 'none';
+    }
+    </script>
+</body>
+</html>
+
