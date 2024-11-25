@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Discord Bot: Dein Virtueller Rennliga-Manager</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNmNWY1ZjUiLz48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiNlOGU4ZTgiLz48cmVjdCB5PSIyNSIgeD0iMjUiIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0iI2U4ZThlOCIvPjwvc3ZnPg==');
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #e10600;
+            border-bottom: 3px solid #e10600;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e10600;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        code {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #e10600 0%, #ff2b2b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(225, 6, 0, 0.2);
+        }
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .language-switch a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #e10600;
+        }
+        .language-switch a.active {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .news-feed {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .news-item {
+            border-left: 4px solid #e10600;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+        }
+        .checkered-flag {
+            background-image: linear-gradient(45deg, #000 25%, transparent 25%),
+                linear-gradient(-45deg, #000 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #000 75%),
+                linear-gradient(-45deg, transparent 75%, #000 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            height: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switch">
+            <a href="#" class="active">DE</a> |
+            <a href="#" onclick="switchToEnglish()">EN</a>
+        </div>
+
+        <div class="checkered-flag"></div>
+
+        <h1>🏎️ Racing Discord Bot: Dein Virtueller Rennliga-Manager</h1>
+        
+        <div class="highlight">
+            Ein ausgefeilter Discord Bot, entwickelt mit .NET 8, der virtuelle Rennligen mit Echtzeit-Tracking, Ranglisten und automatisierten Updates verwaltet und verbessert.
+        </div>
+
+        <h2>Live Renn-Newsfeed Demo</h2>
+        <div class="news-feed">
+            <div class="news-item">
+                <h3>🏆 HOCHSPANNUNG: MaxV33</h3>
+                "Meine Güte, was für eine Performance! MaxV33 knallt eine 1:21.337 in Spa-Francorchamps hin! Das ist Racing vom anderen Stern!" - Sebastian Vettel
+            </div>
+
+            <div class="news-item">
+                <h3>⚡ BLITZSCHNELL: Silv3rArrow</h3>
+                "Ein technisches Meisterwerk! Silv3rArrow bezwingt die Nordschleife in 6:48.223! 'Rattenscharf wie Curry mit Uwe Alzen!' - Johannes Stuck"
+            </div>
+
+            <div class="news-item">
+                <h3>🌟 SENSATIONELL: RocketRacer</h3>
+                "WAHNSINN! RocketRacer donnert in die Top 5 mit einer atemberaubenden 1:09.456 in Monza! 'Das ist keine Runde, das ist Kunst!' - Leopold Prinz von Bayern"
+            </div>
+        </div>
+
+        <h2>Technische Architektur</h2>
+    <p>
+        Der Bot nutzt moderne .NET 8-Funktionen mit einer sauberen Architektur:
+    </p>
+    <div class="feature-box">
+        <ul>
+            <li><strong>Datenschicht:</strong> PostgreSQL mit Entity Framework Core für robustes Datenmanagement</li>
+            <li><strong>Befehlssystem:</strong> Modulare Befehlsstruktur mit Discord.Net</li>
+            <li><strong>Dienste:</strong> Dedizierte Services für Rennen, News und Zeitplanung</li>
+            <li><strong>Entitätsmodell:</strong> Gut strukturierte Entitäten für Strecken, Zeitpläne und Ranglisten</li>
+        </ul>
+    </div>
+
+    <h2>Wichtige Befehle</h2>
+    <div class="feature-box">
+        <ul>
+            <li><code>!race</code> - Zeige aktuelle Renninformationen</li>
+            <li><code>!rankings</code> - Überprüfe aktuelle Rennranglisten</li>
+            <li><code>!schedule</code> - Zeige kommende Renntermine</li>
+            <li><code>!submit</code> - Reiche eine neue Rundenzeit ein</li>
+            <li><code>!trackrecord</code> - Zeige Streckenrekorde</li>
+        </ul>
+    </div>
+
+    <h2>Besondere Funktionen</h2>
+    <h3>Dynamische Nachrichtengenerierung</h3>
+    <p>
+        Der Bot enthält ein einzigartiges deutsches Rennkommentarsystem mit Zitaten von Rennlegenden wie Sebastian Vettel und Walter Röhrl. Dies verleiht den Renn-Updates Authentizität und Spannung.
+    </p>
+
+    <h3>Intelligentes Zeitmanagement</h3>
+    <p>
+        Das Rundenzeit-Einreichungssystem umfasst:
+    </p>
+    <div class="feature-box">
+        <ul>
+            <li>Strenge Zeitformatvalidierung (MM:SS.mmm)</li>
+            <li>Anti-Spam-Cooldown-System</li>
+            <li>Automatische Streckenrekorderkennung und -feier</li>
+            <li>60-Sekunden-Einreichungs-Timeout für saubere Benutzerinteraktion</li>
+        </ul>
+    </div>
+
+    <h2>Zukünftige Entwicklung</h2>
+    <p>
+        Die modulare Architektur ermöglicht eine einfache Erweiterung mit geplanten Funktionen wie:
+    </p>
+    <div class="feature-box">
+        <ul>
+            <li>Fahrzeugspezifische Bestenlisten</li>
+            <li>Wetterbedingungsverfolgung</li>
+            <li>Meisterschaftspunktesysteme</li>
+            <li>Teammanagement-Funktionen</li>
+        </ul>
+    </div>
+
+        <div class="checkered-flag"></div>
+
+    </div>
+
+    <script>
+        function switchToEnglish() {
+            alert('Switching to English version...');
+        }
+    </script>
+</body>
+</html>
