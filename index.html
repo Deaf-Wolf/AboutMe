@@ -3,30 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lars Sodomann</title>
-    
+    <title>Lars Sodomann - Developer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="Content\css\style.css">
+    <link rel="stylesheet" type="text/css" href="Content/css/style.css">
 </head>
 <body>
-    <div class="topnav">
-        <a href="/">Home</a>
-        <a href="/AboutMe.html">About Me</a>
-        <a href="/SignbyteContent.html">SignByte Content</a>
-        <a href="/HotlapBot.html">Project Blog</a>
-    </div>
-    
-    <main>
-        <section class="card">
-            <h1>Gude!</h1>
-            <h2>Willkommen bei Lars Sodomann</h2>
-            <a href="/AboutMe.html" class="button">Read About Me</a>
-        </section>
-    </main>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1 class="glitch">Lars Sodomann</h1>
+            <p class="subtitle">Developer • Maker • Content Creator</p>
+            <div class="hero-links">
+                <a href="https://www.youtube.com/channel/UCDRpqdLRomDDV1jPFCrV1Fw" target="_blank" class="link-btn">YouTube</a>
+                <a href="https://github.com/Deaf-Wolf" target="_blank" class="link-btn">GitHub</a>
+                <a href="#timeline" class="link-btn">Content</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>// About</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>$ whoami</h3>
+                    <p>Dev bei der Stadt Frankfurt im Amt 16. Sitecore CMS Development, gehörlos und mache auf meinem YouTube- und Instagram-Kanal <a href="https://www.youtube.com/channel/UCDRpqdLRomDDV1jPFCrV1Fw" target="_blank">SignByte</a> Tech-Content.</p>
+                    <p>Gaming, Fotografie und alles was mit Technik zu tun hat. Meine PCs laufen auf Linux (Omarchy).</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>$ work</h3>
+                    <p>Fachinformatiker, optimiere die Sitecore-Plattform. Entwickle eine interne Service-Webanwendung mit ASP.NET, SharePoint und SQL.</p>
+                    <p>Side-Project: Dolmetscher-Planer mit Blazor (Web) und Flutter (Android). Täglich .NET ASP, Blazor, Backend mit Supabase.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>$ projects</h3>
+                    <p>Maker der Software und Hardware mixt. 3D-Drucker für Custom-Teile, ESPs und Mikrocontroller. CAD mit OpenSCAD und FreeCAD.</p>
+                    <p>SignByte zeigt was möglich ist wenn man Tech und Leidenschaft kombiniert.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="stack">
+        <div class="container">
+            <h2>// Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Languages</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Dart</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Frameworks</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">.NET ASP</span>
+                        <span class="tech-tag">Blazor</span>
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Sitecore</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">SharePoint</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Hardware</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">3D Printing</span>
+                        <span class="tech-tag">CAD</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <div class="container">
+            <h2>// Content Timeline</h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-platform yt">YouTube</span>
+                        <h4>Latest Tech Build</h4>
+                        <p class="timeline-date">2024-11-10</p>
+                        <p>ESP32 Doorbell Detection System - Cyberpunk Edition</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-platform ig">Instagram</span>
+                        <h4>3D Printing Showcase</h4>
+                        <p class="timeline-date">2024-11-08</p>
+                        <p>Custom enclosure for my latest IoT project</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-platform yt">YouTube</span>
+                        <h4>Blazor Tutorial</h4>
+                        <p class="timeline-date">2024-11-05</p>
+                        <p>Building a real-time web app with Blazor and Supabase</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-platform ig">Instagram</span>
+                        <h4>Workspace Setup</h4>
+                        <p class="timeline-date">2024-11-01</p>
+                        <p>My Linux development environment tour</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-platform yt">YouTube</span>
+                        <h4>Flutter App Development</h4>
+                        <p class="timeline-date">2024-10-28</p>
+                        <p>Building the Dolmetscher-Planer mobile app</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-platform ig">Instagram</span>
+                        <h4>CAD Design Process</h4>
+                        <p class="timeline-date">2024-10-25</p>
+                        <p>Learning OpenSCAD - parametric design basics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Lars Sodomann</p>
+        <div class="container">
+            <p>&copy; 2024 Lars Sodomann • <a href="https://www.youtube.com/channel/UCDRpqdLRomDDV1jPFCrV1Fw" target="_blank">SignByte</a></p>
+        </div>
     </footer>
 </body>
 </html>
