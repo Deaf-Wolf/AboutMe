@@ -1,0 +1,407 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.icon-btn:hover {
+    color: #00ae42;
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo {
+    height: 32px;
+    width: auto;
+}
+
+.hamburger svg {
+    stroke-width: 2.5;
+}
+
+/* Content Styles */
+.content {
+    flex: 1;
+    background-color: var(--bbl-grey-2, #f5f5f5);
+    padding: 20px 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Order Number Styles */
+.order-number {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.order-number-text {
+    color: rgb(0 174 66 / var(--tw-text-opacity, 1));
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: rgb(0 174 66 / var(--tw-text-opacity, 1));
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.copy-btn:hover {
+    transform: scale(1.1);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background-color: rgba(255, 193, 7, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.status-text {
+    color: #f59e0b;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+/* Product Info Styles */
+.product-info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-image {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.product-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.quantity {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.product-subtitle {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Order Summary Styles */
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.summary-row.grey-text {
+    color: #999;
+}
+
+.summary-row.total {
+    font-weight: 600;
+    color: #666;
+    font-size: 1rem;
+}
+
+.summary-row.gross {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.05rem;
+    margin-top: 4px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 8px 0;
+}
+
+/* Address Styles */
+.address-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.address-item {
+    padding: 8px 0;
+    color: #999;
+    font-size: 0.95rem;
+}
+
+.address-item:first-child {
+    font-weight: 600;
+    color: #666;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    padding: 16px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .content {
+        padding: 32px 24px;
+    }
+    
+    .header {
+        padding: 16px 24px;
+    }
+    
+    .card {
+        padding: 24px;
+    }
+    
+    .page-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Lock Overlay Styles */
+.lock-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.lock-content {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.lock-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.lock-hint {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.password-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: #00ae42;
+}
+
+.unlock-btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #00ae42;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.unlock-btn:hover {
+    background-color: #009638;
+    transform: translateY(-2px);
+}
+
+.unlock-btn:active {
+    transform: translateY(0);
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    display: none;
+}
+
+/* Animation for copy feedback */
+@keyframes copyPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.copy-btn.copied {
+    animation: copyPulse 0.3s ease;
+}
